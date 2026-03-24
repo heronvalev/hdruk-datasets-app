@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDRUK datasets</title>
+    <title>HDR UK Dataset Metadata</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>TEST</h1>
+    <main class="page-container">
+        <header class="page-header">
+            <h1>HDR UK Dataset Metadata</h1>
+            <p>
+                The page displays dataset metadata extracted from the HDR UK source JSON.
+            </p>
+            <p><strong>Total datasets:</strong> {{ datasets|length }}</p>
+        </header>
+
+        <section class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Access Service Category</th>
+                        <th>Access Rights</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dataset in datasets %}
+                    <tr>
+                        <td>{{ dataset.title }}</td>
+                        <td>{{ dataset.description }}</td>
+                        <td>{{ dataset.accessServiceCategory }}</td>
+                        <td>
+                            {% if is_url(dataset.accessRights) %}
+                                <a href="{{ dataset.accessRights }}" target="_blank" rel="noopener noreferrer">
+                                    View link
+                                </a>
+                            {% else %}
+                                {{ dataset.accessRights }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 </html>
