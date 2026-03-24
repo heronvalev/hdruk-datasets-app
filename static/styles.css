@@ -1,0 +1,81 @@
+/*
+styles.css
+----------
+Provides simple styling for the dataset metadata page and table.
+Keeps the layout clean, readable, and easy to scan.
+*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #eef3f8;
+    color: #1f2a36;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: #dfeaf4;
+    border-left: 6px solid #1f5f8b;
+    border-radius: 6px;
+}
+
+.page-header h1 {
+    margin: 0 0 0.5rem 0;
+    color: #123a56;
+}
+
+.page-header p {
+    margin: 0.25rem 0;
+}
+
+.table-section {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border: 1px solid #d4dde6;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    table-layout: fixed;
+}
+
+th,
+td {
+    border: 1px solid #d4dde6;
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #1f5f8b;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+a {
+    color: #0f5ea8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.description-column,
+.access-rights-column {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
