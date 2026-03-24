@@ -21,6 +21,7 @@ def clean_text(value: object, fallback: str = "Not provided") -> str:
 
 # Check whether a value looks like a web link.
 def is_url(value: str) -> bool:
+    value = value.strip().lower()
     return value.startswith("http://") or value.startswith("https://") or value.startswith("www.")
 
 # Download the dataset JSON from the source URL.
